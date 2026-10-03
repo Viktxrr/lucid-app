@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support &amp; Privacy</title>
+  <meta name="description" content="Support, FAQ and Privacy Policy" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', '"Segoe UI"', 'Inter', 'Roboto', 'sans-serif'],
+          },
+          colors: { accent: '#FA5C7A' },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { background: #000; }
+    /* Soft ambient glow behind everything */
+    .orb { position: fixed; border-radius: 9999px; filter: blur(90px); opacity: .28; pointer-events: none; z-index: 0; }
+    /* Liquid-glass surface */
+    .glass {
+      background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    /* iOS app-icon shape (continuous-corner approximation) */
+    .app-icon { border-radius: 22.5%; overflow: hidden; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(90deg); }
+    /* Language switch: only the active language is visible */
+    html[data-lang="de"] [lang="en"], html[data-lang="en"] [lang="de"] { display: none !important; }
+  </style>
+</head>
+<body class="min-h-screen font-sans text-white/90 antialiased">
+  <div class="orb" style="width:520px;height:520px;top:-180px;left:-160px;background:#FA5C7A"></div>
+  <div class="orb" style="width:460px;height:460px;top:-120px;right:-180px;background:#6E7BFF"></div>
+  <div class="orb" style="width:420px;height:420px;bottom:-200px;left:30%;background:#8A4DFF;opacity:.18"></div>
+
+  <!-- ===================================================================
+       CONFIG – only edit these two values (used everywhere on the page)
+       =================================================================== -->
+  <script>
+    const CONFIG = {
+      appName: 'Lucid',
+      email: 'deine@email-adresse.de',
+      lastUpdated: '2026-10-02',
+    };
+  </script>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-20 px-4 pt-4">
+    <nav class="glass mx-auto flex max-w-4xl items-center justify-between rounded-2xl px-4 py-3 shadow-2xl shadow-black/40">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="icon.png" alt="" width="36" height="36" class="app-icon h-9 w-9 shadow-lg shadow-black/40" />
+        <span class="font-semibold tracking-tight" data-app-name></span>
+      </a>
+      <div class="flex items-center gap-1 text-sm">
+        <a href="#support" class="rounded-lg px-3 py-1.5 text-white/70 transition hover:bg-white/10 hover:text-white">Support</a>
+        <a href="#privacy" class="rounded-lg px-3 py-1.5 text-white/70 transition hover:bg-white/10 hover:text-white">
+          <span lang="de">Datenschutz</span><span lang="en">Privacy</span>
+        </a>
+        <button id="lang" class="ml-1 rounded-lg border border-white/15 px-2.5 py-1.5 text-xs font-semibold text-white/80 transition hover:bg-white/10" aria-label="Switch language">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="relative z-10 mx-auto max-w-4xl px-4 pb-24">
+    <!-- Hero -->
+    <section class="pb-10 pt-16 text-center sm:pt-24">
+      <img src="icon.png" alt="App icon" width="128" height="128" class="app-icon mx-auto mb-8 h-32 w-32 shadow-2xl shadow-[#0B2A6B]/60" />
+      <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+        <span data-app-name></span>
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-white/60">
+        <span lang="de">Ein modularer Offline-Musikplayer für deine eigene Musik. Ohne Konto, ohne Tracking, ohne Cloud-Zwang.</span>
+        <span lang="en">A modular offline music player for the music you own. No account, no tracking, no cloud required.</span>
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#support" class="rounded-full bg-accent px-6 py-3 font-semibold text-black transition hover:brightness-110">Support &amp; FAQ</a>
+        <a href="#privacy" class="glass rounded-full px-6 py-3 font-semibold transition hover:bg-white/10">
+          <span lang="de">Datenschutzerklärung</span><span lang="en">Privacy Policy</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="grid gap-4 sm:grid-cols-3">
+      <div class="glass rounded-3xl p-6">
+        <div class="mb-3 text-2xl">📁</div>
+        <h3 class="font-semibold"><span lang="de">Deine Dateien</span><span lang="en">Your files</span></h3>
+        <p class="mt-1 text-sm text-white/60">
+          <span lang="de">MP3, M4A, FLAC, WAV … direkt aus der Dateien-App importieren.</span>
+          <span lang="en">Import MP3, M4A, FLAC, WAV … straight from the Files app.</span>
+        </p>
+      </div>
+      <div class="glass rounded-3xl p-6">
+        <div class="mb-3 text-2xl">🔒</div>
+        <h3 class="font-semibold"><span lang="de">100 % lokal</span><span lang="en">100% local</span></h3>
+        <p class="mt-1 text-sm text-white/60">
+          <span lang="de">Alles bleibt auf deinem iPhone. Kein Tracking, keine Analyse.</span>
+          <span lang="en">Everything stays on your iPhone. No tracking, no analytics.</span>
+        </p>
+      </div>
+      <div class="glass rounded-3xl p-6">
+        <div class="mb-3 text-2xl">🧩</div>
+        <h3 class="font-semibold">Bring Your Own Server</h3>
+        <p class="mt-1 text-sm text-white/60">
+          <span lang="de">Optional eigene Quellen für Cover und Songtexte anbinden.</span>
+          <span lang="en">Optionally connect your own sources for cover art and lyrics.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ SUPPORT ============================ -->
+    <section id="support" class="scroll-mt-28 pt-20">
+      <h2 class="text-3xl font-bold tracking-tight">Support &amp; FAQ</h2>
+      <p class="mt-2 text-white/60">
+        <span lang="de">Die häufigsten Fragen – und wie du uns erreichst.</span>
+        <span lang="en">The most common questions – and how to reach us.</span>
+      </p>
+
+      <div class="mt-8 space-y-3">
+        <details class="glass group rounded-2xl p-5" open>
+          <summary class="flex items-center justify-between font-semibold">
+            <span lang="de">Was ist <span data-app-name></span>?</span>
+            <span lang="en">What is <span data-app-name></span>?</span>
+            <span class="chev text-white/40 transition">›</span>
+          </summary>
+          <p class="mt-3 text-white/70">
+            <span lang="de">Ein modularer Offline-Player für deine eigenen Audio-Dateien – mit Playlists, Songtexten, Crossfade, Equalizer und Hörstatistiken. Die App funktioniert vollständig ohne Internet. Sie bringt keine Musik und keine Online-Dienste mit.</span>
+            <span lang="en">A modular offline player for your own audio files – with playlists, lyrics, crossfade, an equalizer and listening stats. The app works entirely without internet. It ships with no music and no online services.</span>
+          </p>
+        </details>
+
+        <details class="glass rounded-2xl p-5">
+          <summary class="flex items-center justify-between font-semibold">
+            <span lang="de">Wie füge ich Musik hinzu?</span>
+            <span lang="en">How do I add music?</span>
+            <span class="chev text-white/40 transition">›</span>
+          </summary>
+          <ol class="mt-3 list-decimal space-y-1 pl-5 text-white/70">
+            <li><span lang="de">Lege deine Audio-Dateien (z. B. MP3, M4A, FLAC, WAV) in die Dateien-App – auf dem iPhone, in iCloud Drive oder einem anderen Speicherort.</span><span lang="en">Put your audio files (e.g. MP3, M4A, FLAC, WAV) into the Files app – on your iPhone, in iCloud Drive or another location.</span></li>
+            <li><span lang="de">Tippe in der leeren Mediathek auf „Audio-Dateien importieren“ – oder in den Einstellungen auf „Musik importieren“.</span><span lang="en">Tap “Import Audio Files” in the empty library – or “Import Music” in Settings.</span></li>
+            <li><span lang="de">Wähle Dateien oder einen ganzen Ordner aus. Titel, Künstler und eingebettete Cover werden automatisch gelesen.</span><span lang="en">Pick files or a whole folder. Title, artist and embedded artwork are read automatically.</span></li>
+          </ol>
+        </details>
+
+        <details class="glass rounded-2xl p-5">
+          <summary class="flex items-center justify-between font-semibold">
+            <span lang="de">Was bedeutet „Bring Your Own Server“ (BYOS)?</span>
+            <span lang="en">What does “Bring Your Own Server” (BYOS) mean?</span>
+            <span class="chev text-white/40 transition">›</span>
+          </summary>
+          <div class="mt-3 space-y-2 text-white/70">
+            <p><span lang="de">Die App enthält keine vorinstallierten Online-Quellen. Unter Einstellungen → Ressourcen &amp; APIs kannst du optional eigene Adressen (URL-Vorlagen) eintragen, z. B. deinen eigenen Server, um Cover-Bilder oder Songtexte zu laden.</span><span lang="en">The app contains no built-in online sources. Under Settings → Resources &amp; APIs you can optionally add your own addresses (URL templates), e.g. your own server, to load cover art or lyrics.</span></p>
+            <p><span lang="de">Platzhalter wie <code class="rounded bg-white/10 px-1.5 py-0.5 text-sm">{track}</code>, <code class="rounded bg-white/10 px-1.5 py-0.5 text-sm">{artist}</code> und <code class="rounded bg-white/10 px-1.5 py-0.5 text-sm">{album}</code> werden automatisch ausgefüllt. Mit „Testen“ prüft die App deine Quelle vor dem Speichern.</span><span lang="en">Placeholders such as <code class="rounded bg-white/10 px-1.5 py-0.5 text-sm">{track}</code>, <code class="rounded bg-white/10 px-1.5 py-0.5 text-sm">{artist}</code> and <code class="rounded bg-white/10 px-1.5 py-0.5 text-sm">{album}</code> are filled in automatically. “Test” checks your source before it’s saved.</span></p>
+            <p><span lang="de">Du bist selbst dafür verantwortlich, nur Quellen zu nutzen, für die du die Berechtigung hast.</span><span lang="en">You are responsible for only using sources you are permitted to use.</span></p>
+          </div>
+        </details>
+
+        <details class="glass rounded-2xl p-5">
+          <summary class="flex items-center justify-between font-semibold">
+            <span lang="de">Funktioniert die App ohne Internet?</span>
+            <span lang="en">Does the app work offline?</span>
+            <span class="chev text-white/40 transition">›</span>
+          </summary>
+          <p class="mt-3 text-white/70">
+            <span lang="de">Ja. Importierte Musik, Playlists, Statistiken sowie bereits geladene Cover und Songtexte sind vollständig offline verfügbar. Internet wird nur benötigt, wenn du selbst eine Online-Quelle eingerichtet hast.</span>
+            <span lang="en">Yes. Imported music, playlists, stats and any artwork or lyrics already loaded are fully available offline. Internet is only needed if you have set up an online source yourself.</span>
+          </p>
+        </details>
+
+        <details class="glass rounded-2xl p-5">
+          <summary class="flex items-center justify-between font-semibold">
+            <span lang="de">Warum fehlen Cover oder Songtexte?</span>
+            <span lang="en">Why is artwork or are lyrics missing?</span>
+            <span class="chev text-white/40 transition">›</span>
+          </summary>
+          <p class="mt-3 text-white/70">
+            <span lang="de">Ohne eingerichtete Quelle zeigt die App nur in die Datei eingebettete Cover. Du kannst jederzeit eigene Bilder (Fotos/Dateien) oder Songtexte (.lrc/.txt) über „Cover ändern“ bzw. „Songtext ändern“ hinzufügen.</span>
+            <span lang="en">Without a configured source the app only shows artwork embedded in the file. You can always add your own images (Photos/Files) or lyrics (.lrc/.txt) via “Change Artwork” or “Change Lyrics”.</span>
+          </p>
+        </details>
+
+        <details class="glass rounded-2xl p-5">
+          <summary class="flex items-center justify-between font-semibold">
+            <span lang="de">Wie lösche ich meine Daten?</span>
+            <span lang="en">How do I delete my data?</span>
+            <span class="chev text-white/40 transition">›</span>
+          </summary>
+          <p class="mt-3 text-white/70">
+            <span lang="de">Alle Daten liegen ausschließlich auf deinem Gerät. Einzelne Songs, Cover und Songtexte kannst du in der App löschen (Einstellungen → Speicher). Wenn du die App deinstallierst, werden alle Daten vollständig entfernt.</span>
+            <span lang="en">All data is stored only on your device. You can delete individual songs, artwork and lyrics in the app (Settings → Storage). Uninstalling the app removes all data completely.</span>
+          </p>
+        </details>
+      </div>
+
+      <!-- Contact -->
+      <div class="glass mt-8 flex flex-col items-start justify-between gap-4 rounded-3xl p-6 sm:flex-row sm:items-center">
+        <div>
+          <h3 class="text-lg font-semibold"><span lang="de">Noch Fragen?</span><span lang="en">Still need help?</span></h3>
+          <p class="text-white/60"><span lang="de">Schreib uns – wir antworten so schnell wie möglich.</span><span lang="en">Write to us – we’ll get back to you as soon as we can.</span></p>
+        </div>
+        <a data-email-link class="rounded-full bg-accent px-6 py-3 font-semibold text-black transition hover:brightness-110">
+          <span data-email></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ PRIVACY ============================ -->
+    <section id="privacy" class="scroll-mt-28 pt-20">
+      <h2 class="text-3xl font-bold tracking-tight">
+        <span lang="de">Datenschutzerklärung</span><span lang="en">Privacy Policy</span>
+      </h2>
+      <p class="mt-2 text-sm text-white/50">
+        <span lang="de">Stand:</span><span lang="en">Last updated:</span> <span data-updated></span>
+      </p>
+
+      <!-- TL;DR -->
+      <div class="mt-8 rounded-3xl border border-accent/30 bg-gradient-to-br from-accent/15 to-[#8A4DFF]/10 p-6">
+        <h3 class="text-xl font-semibold">
+          <span lang="de">Kurz gesagt: Wir sammeln keine Daten.</span>
+          <span lang="en">In short: we collect no data.</span>
+        </h3>
+        <ul class="mt-4 grid gap-2 text-white/80 sm:grid-cols-2">
+          <li>✓ <span lang="de">100 % lokale Verarbeitung auf deinem Gerät</span><span lang="en">100% local processing on your device</span></li>
+          <li>✓ <span lang="de">Kein Konto, keine Anmeldung</span><span lang="en">No account, no sign-in</span></li>
+          <li>✓ <span lang="de">Kein Tracking, keine Analyse, keine Werbung</span><span lang="en">No tracking, no analytics, no ads</span></li>
+          <li>✓ <span lang="de">Keine eigenen Server – wir erhalten nichts</span><span lang="en">No servers of our own – we receive nothing</span></li>
+        </ul>
+      </div>
+
+      <div class="mt-8 space-y-6 leading-relaxed text-white/75">
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">1. <span lang="de">Verantwortlicher</span><span lang="en">Controller</span></h3>
+          <p><span lang="de">Verantwortlich für die App <span data-app-name></span> ist der Entwickler, erreichbar unter</span><span lang="en">The app <span data-app-name></span> is provided by its developer, reachable at</span> <a data-email-link class="text-accent underline underline-offset-4"><span data-email></span></a>.</p>
+        </article>
+
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">2. <span lang="de">Keine Datenerhebung durch uns</span><span lang="en">No data collection by us</span></h3>
+          <p><span lang="de">Die App arbeitet vollständig lokal. Wir betreiben keine Server für die App und erhalten, speichern oder verarbeiten keinerlei personenbezogene Daten. Es sind keine Analyse-, Tracking- oder Werbe-Dienste (SDKs) eingebunden. Die App verfolgt dich weder app- noch webseitenübergreifend.</span><span lang="en">The app works entirely locally. We operate no servers for the app and do not receive, store or process any personal data. No analytics, tracking or advertising services (SDKs) are included. The app does not track you across apps or websites.</span></p>
+        </article>
+
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">3. <span lang="de">Daten auf deinem Gerät</span><span lang="en">Data on your device</span></h3>
+          <p><span lang="de">Folgende Daten werden ausschließlich lokal auf deinem iPhone gespeichert und verlassen es nicht:</span><span lang="en">The following data is stored only locally on your iPhone and never leaves it:</span></p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li><span lang="de">Importierte Audio-Dateien, Cover-Bilder und Songtexte</span><span lang="en">Imported audio files, artwork and lyrics</span></li>
+            <li><span lang="de">Mediathek, Playlists und Einstellungen (lokale Datenbank)</span><span lang="en">Library, playlists and settings (local database)</span></li>
+            <li><span lang="de">Hörstatistiken (z. B. Wiedergabezeit) – nur für die Anzeige in der App</span><span lang="en">Listening stats (e.g. play time) – only for display in the app</span></li>
+            <li><span lang="de">Von dir eingetragene Quellen-Adressen – verschlüsselt im iOS-Schlüsselbund</span><span lang="en">Source addresses you add – encrypted in the iOS Keychain</span></li>
+          </ul>
+          <p class="mt-2"><span lang="de">Durch Löschen der App werden alle diese Daten entfernt.</span><span lang="en">Deleting the app removes all of this data.</span></p>
+        </article>
+
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">4. <span lang="de">Optionale externe Quellen (BYOS)</span><span lang="en">Optional external sources (BYOS)</span></h3>
+          <p><span lang="de">Standardmäßig stellt die App keinerlei Internet-Anfragen. Nur wenn du selbst eine Quelle einträgst, ruft die App diese <strong>direkt von deinem Gerät</strong> auf – nicht über uns. Dabei werden ausschließlich die für die Suche nötigen Angaben übertragen (Songtitel, Künstler, Album bzw. dein Suchbegriff) sowie technisch notwendige Verbindungsdaten wie deine IP-Adresse und eine allgemeine App-Kennung (User-Agent).</span><span lang="en">By default the app makes no internet requests at all. Only if you add a source yourself does the app contact it <strong>directly from your device</strong> – not through us. Only the details needed for the lookup are sent (song title, artist, album or your search term), plus technically required connection data such as your IP address and a generic app identifier (user agent).</span></p>
+          <p class="mt-2"><span lang="de">Für diese Dienste gelten deren eigene Datenschutzbestimmungen. Wir haben darauf keinen Einfluss und erhalten keine Daten davon.</span><span lang="en">Those services are governed by their own privacy policies. We have no control over them and receive no data from them.</span></p>
+        </article>
+
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">5. <span lang="de">Berechtigungen</span><span lang="en">Permissions</span></h3>
+          <ul class="list-disc space-y-1 pl-5">
+            <li><strong><span lang="de">Fotos:</span><span lang="en">Photos:</span></strong> <span lang="de">nur für Bilder, die du selbst auswählst (eigene Cover, Künstler- oder Playlist-Bilder).</span><span lang="en">only for images you pick yourself (custom artwork, artist or playlist images).</span></li>
+            <li><strong><span lang="de">Dateien:</span><span lang="en">Files:</span></strong> <span lang="de">nur für Dateien und Ordner, die du im System-Dialog auswählst.</span><span lang="en">only for files and folders you choose in the system picker.</span></li>
+            <li><strong><span lang="de">Lokales Netzwerk:</span><span lang="en">Local network:</span></strong> <span lang="de">nur, wenn du einen eigenen Server in deinem Heimnetz einträgst.</span><span lang="en">only if you add your own server in your home network.</span></li>
+          </ul>
+          <p class="mt-2"><span lang="de">Mikrofon, Kamera, Standort und Kontakte werden nicht verwendet.</span><span lang="en">Microphone, camera, location and contacts are not used.</span></p>
+        </article>
+
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">6. <span lang="de">Kinder</span><span lang="en">Children</span></h3>
+          <p><span lang="de">Da wir keine Daten erheben, werden auch keine Daten von Kindern erhoben.</span><span lang="en">As we collect no data, we also collect no data from children.</span></p>
+        </article>
+
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">7. <span lang="de">Deine Rechte &amp; Kontakt</span><span lang="en">Your rights &amp; contact</span></h3>
+          <p><span lang="de">Da wir keine personenbezogenen Daten verarbeiten, liegen uns keine Daten über dich vor, die wir beauskunften, berichtigen oder löschen könnten. Bei Fragen zum Datenschutz erreichst du uns unter</span><span lang="en">As we process no personal data, we hold no data about you that could be disclosed, corrected or deleted. For privacy questions, contact us at</span> <a data-email-link class="text-accent underline underline-offset-4"><span data-email></span></a>.</p>
+        </article>
+
+        <article class="glass rounded-3xl p-6">
+          <h3 class="mb-2 text-lg font-semibold text-white">8. <span lang="de">Änderungen</span><span lang="en">Changes</span></h3>
+          <p><span lang="de">Ändert sich die Funktionsweise der App, passen wir diese Erklärung an. Das Datum oben zeigt die aktuelle Fassung.</span><span lang="en">If the way the app works changes, we will update this policy. The date above shows the current version.</span></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/10 py-8 text-center text-sm text-white/40">
+    © <span id="year"></span> <span data-app-name></span> ·
+    <a href="#support" class="hover:text-white/70">Support</a> ·
+    <a href="#privacy" class="hover:text-white/70"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a>
+  </footer>
+
+  <script>
+    // Fill in app name, e-mail and date from CONFIG.
+    document.querySelectorAll('[data-app-name]').forEach((el) => (el.textContent = CONFIG.appName));
+    document.querySelectorAll('[data-email]').forEach((el) => (el.textContent = CONFIG.email));
+    document.querySelectorAll('[data-email-link]').forEach((el) => (el.href = 'mailto:' + CONFIG.email));
+    document.querySelectorAll('[data-updated]').forEach((el) => (el.textContent = CONFIG.lastUpdated));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.title = CONFIG.appName + ' – Support & Privacy';
+
+    // Language: ?lang=en / ?lang=de, else the browser language (German or English).
+    const root = document.documentElement;
+    const btn = document.getElementById('lang');
+    const setLang = (lang) => {
+      root.dataset.lang = lang;
+      root.lang = lang;
+      btn.textContent = lang === 'de' ? 'EN' : 'DE';
+    };
+    const param = new URLSearchParams(location.search).get('lang');
+    setLang(param === 'en' || param === 'de' ? param : navigator.language.startsWith('de') ? 'de' : 'en');
+    btn.addEventListener('click', () => setLang(root.dataset.lang === 'de' ? 'en' : 'de'));
+  </script>
+</body>
+</html>
