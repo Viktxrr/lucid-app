@@ -1,1 +1,1 @@
-# lucid
+# lucid audioplayer app
