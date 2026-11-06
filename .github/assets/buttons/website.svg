@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="46" viewBox="0 0 130 46" role="img" aria-label="Website">
+<style>
+:root{--fg:#1f2328;--base:#eef0f3;--f1:.75;--f2:.3;--r1:1;--r2:.3;--r3:.8;--s:.8;--sh:.16}
+@media (prefers-color-scheme:dark){:root{--fg:#fff;--base:#20242c;--f1:.2;--f2:.05;--r1:.6;--r2:.1;--r3:.28;--s:.28;--sh:.5}}
+</style>
+<defs>
+<linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" style="stop-opacity:var(--f1)"/><stop offset="1" stop-color="#fff" style="stop-opacity:var(--f2)"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" style="stop-opacity:var(--r1)"/><stop offset=".55" stop-color="#fff" style="stop-opacity:var(--r2)"/><stop offset="1" stop-color="#fff" style="stop-opacity:var(--r3)"/></linearGradient>
+<linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" style="stop-opacity:var(--s)"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="b" x="-20%" y="-30%" width="140%" height="180%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" style="flood-opacity:var(--sh)"/></filter>
+</defs>
+<rect x="4" y="3" width="122" height="36" rx="18" style="fill:var(--base)" filter="url(#b)"/>
+<rect x="4" y="3" width="122" height="36" rx="18" fill="url(#f)"/>
+<rect x="9" y="5" width="112" height="15.12" rx="7.56" fill="url(#s)"/>
+<rect x="4.5" y="3.5" width="121" height="35" rx="17.5" fill="none" stroke="url(#r)"/>
+<g transform="translate(18,11) scale(0.8333333333333334)" fill="none" style="stroke:var(--fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.4 3 3.4 15 0 18M12 3c-3.4 3-3.4 15 0 18"/></g>
+<text x="47" y="26.2" font-family="-apple-system,BlinkMacSystemFont,Helvetica Neue,Arial,sans-serif" font-size="15" font-weight="600" style="fill:var(--fg)">Website</text>
+</svg>
