@@ -138,7 +138,7 @@
 <div class="sc-grain" aria-hidden="true"></div>
 <script>
   // Only edit these values: used everywhere on the page.
-  const CONFIG = { appName: 'Lucid', email: 'lucid.app.support@proton.me', lastUpdated: '2026-10-11' };
+  const CONFIG = { appName: 'Lucid', email: 'lucid.app.support@proton.me', lastUpdated: '2026-11-06' };
 </script>
 
 <div class="corner corner--l"><a class="home" href="index.html"><img src="assets/icon-v3.png" alt="" width="32" height="32"><span data-app-name></span></a></div>
@@ -207,9 +207,9 @@
           <div class="contact">
             <div>
               <h3><span lang="de">Fehler gefunden oder technische Probleme?</span><span lang="en">Found a bug or experiencing technical issues?</span></h3>
-              <p><span lang="de">Melde es hier. Bitte nur für Fehlermeldungen und kritische technische Probleme.</span><span lang="en">Report it here. For bug reports and critical technical issues only.</span></p>
+              <p><span lang="de">Beschreib uns das Problem im Formular, gern mit Screenshots.</span><span lang="en">Tell us about it in the form, with screenshots if you like.</span></p>
             </div>
-            <a class="badge" data-email-link><span data-email></span></a>
+            <a class="badge" id="report" href="report.html"><span lang="de">Fehler melden</span><span lang="en">Report a Bug</span></a>
           </div>
         </div>
       </div>
@@ -228,12 +228,12 @@
       <div class="half half--r">
         <div class="content">
           <div class="tldr">
-            <h3><span lang="de">Kurz gesagt: Wir sammeln keine Daten.</span><span lang="en">In short: we collect no data.</span></h3>
+            <h3><span lang="de">Kurz gesagt: Die App sammelt keine Daten.</span><span lang="en">In short: the app collects no data.</span></h3>
             <ul>
               <li><span lang="de">100 % lokale Verarbeitung auf deinem Gerät</span><span lang="en">100% local processing on your device</span></li>
               <li><span lang="de">Kein Konto, keine Anmeldung</span><span lang="en">No account, no sign-in</span></li>
               <li><span lang="de">Kein Tracking, keine Analyse, keine Werbung</span><span lang="en">No tracking, no analytics, no ads</span></li>
-              <li><span lang="de">Keine eigenen Server, wir erhalten nichts</span><span lang="en">No servers of our own, we receive nothing</span></li>
+              <li><span lang="de">Keine eigenen Server. Wir erhalten nur, was du uns selbst über das Fehlerformular schickst</span><span lang="en">No servers of our own. We only receive what you send us yourself through the bug report form</span></li>
             </ul>
           </div>
 
@@ -242,8 +242,8 @@
             <p><span lang="de">Verantwortlich für die App <span data-app-name></span> ist der Entwickler, siehe <a href="#support">Support</a>.</span><span lang="en">The app <span data-app-name></span> is provided by its developer, see <a href="#support">Support</a>.</span></p>
           </div></article>
           <article class="clause"><p class="lbl">02</p><div>
-            <h3><span lang="de">Keine Datenerhebung durch uns</span><span lang="en">No data collection by us</span></h3>
-            <p><span lang="de">Die App arbeitet vollständig lokal. Wir betreiben keine Server für die App und erhalten, speichern oder verarbeiten keinerlei personenbezogene Daten. Die App stellt keine Verbindungen ins Internet her. Es sind keine Analyse-, Tracking- oder Werbe-Dienste (SDKs) eingebunden. Die App verfolgt dich weder app- noch webseitenübergreifend.</span><span lang="en">The app works entirely locally. We operate no servers for the app and do not receive, store or process any personal data. The app makes no internet connections. No analytics, tracking or advertising services (SDKs) are included. The app does not track you across apps or websites.</span></p>
+            <h3><span lang="de">Keine Datenerhebung durch die App</span><span lang="en">No data collection by the app</span></h3>
+            <p><span lang="de">Die App arbeitet vollständig lokal. Wir betreiben keine Server für die App, und die App überträgt von sich aus keine personenbezogenen Daten. Eine Internetverbindung entsteht nur, wenn du selbst das Fehlerformular öffnest (siehe Abschnitt 05). Es sind keine Analyse-, Tracking- oder Werbe-Dienste (SDKs) eingebunden. Die App verfolgt dich weder app- noch webseitenübergreifend.</span><span lang="en">The app works entirely locally. We operate no servers for the app, and the app does not transmit any personal data by itself. An internet connection is only made when you open the bug report form yourself (see section 05). No analytics, tracking or advertising services (SDKs) are included. The app does not track you across apps or websites.</span></p>
           </div></article>
           <article class="clause"><p class="lbl">03</p><div>
             <h3><span lang="de">Daten auf deinem Gerät</span><span lang="en">Data on your device</span></h3>
@@ -264,14 +264,19 @@
             <p><span lang="de">Mikrofon, Kamera, Standort und Kontakte werden nicht verwendet.</span><span lang="en">Microphone, camera, location and contacts are not used.</span></p>
           </div></article>
           <article class="clause"><p class="lbl">05</p><div>
-            <h3><span lang="de">Kinder</span><span lang="en">Children</span></h3>
-            <p><span lang="de">Da wir keine Daten erheben, werden auch keine Daten von Kindern erhoben.</span><span lang="en">As we collect no data, we also collect no data from children.</span></p>
+            <h3><span lang="de">Fehlerformular</span><span lang="en">Bug report form</span></h3>
+            <p><span lang="de">Das Formular ist freiwillig. Wenn du es absendest, erhalten wir deine Beschreibung, deine E-Mail-Adresse und Screenshots, falls du sie angibst, sowie die vor dem Senden angezeigte App-Version, das Gerätemodell und die iOS-Version. Screenshots können zeigen, was auf deinem Bildschirm zu sehen ist, zum Beispiel Song-Titel.</span><span lang="en">The form is voluntary. If you send it, we receive your description, your email address and screenshots if you provide them, and the app version, device model and iOS version shown before sending. Screenshots can show whatever is on your screen, such as song titles.</span></p>
+            <p><span lang="de">Der Versand läuft über den Dienst Forminit, der die Angaben verarbeitet und an uns weiterleitet. Wir nutzen sie nur, um den Fehler zu bearbeiten und dir gegebenenfalls zu antworten.</span><span lang="en">Reports are sent through the service Forminit, which processes the details and forwards them to us. We only use them to work on the bug and to reply to you if needed.</span></p>
           </div></article>
           <article class="clause"><p class="lbl">06</p><div>
-            <h3><span lang="de">Deine Rechte</span><span lang="en">Your rights</span></h3>
-            <p><span lang="de">Da wir keine personenbezogenen Daten verarbeiten, liegen uns keine Daten über dich vor, die wir beauskunften, berichtigen oder löschen könnten.</span><span lang="en">As we process no personal data, we hold no data about you that could be disclosed, corrected or deleted.</span></p>
+            <h3><span lang="de">Kinder</span><span lang="en">Children</span></h3>
+            <p><span lang="de">Die App erhebt keine Daten, also auch keine von Kindern. Das Fehlerformular richtet sich nicht an Kinder.</span><span lang="en">The app collects no data, so none from children either. The bug report form is not directed at children.</span></p>
           </div></article>
           <article class="clause"><p class="lbl">07</p><div>
+            <h3><span lang="de">Deine Rechte</span><span lang="en">Your rights</span></h3>
+            <p><span lang="de">Aus der App liegen uns keine Daten über dich vor. Zu einem gesendeten Fehlerbericht kannst du unter <a data-email-link><span data-email></span></a> Auskunft, Berichtigung oder Löschung verlangen.</span><span lang="en">We hold no data about you from the app. For a report you sent, you can request access, correction or deletion at <a data-email-link><span data-email></span></a>.</span></p>
+          </div></article>
+          <article class="clause"><p class="lbl">08</p><div>
             <h3><span lang="de">Änderungen</span><span lang="en">Changes</span></h3>
             <p><span lang="de">Ändert sich die Funktionsweise der App, passen wir diese Erklärung an. Das Datum oben zeigt die aktuelle Fassung.</span><span lang="en">If the way the app works changes, we will update this policy. The date above shows the current version.</span></p>
           </div></article>
@@ -302,7 +307,7 @@
   // Language: ?lang=en / ?lang=de, else the browser language.
   const root = document.documentElement;
   const btn = document.getElementById('lang');
-  const setLang = (lang) => { root.dataset.lang = lang; root.lang = lang; btn.textContent = lang === 'de' ? 'EN' : 'DE'; };
+  const setLang = (lang) => { root.dataset.lang = lang; root.lang = lang; btn.textContent = lang === 'de' ? 'EN' : 'DE'; document.getElementById('report').href = 'report.html?lang=' + lang; };
   const param = new URLSearchParams(location.search).get('lang');
   setLang(param === 'en' || param === 'de' ? param : navigator.language.startsWith('de') ? 'de' : 'en');
   btn.addEventListener('click', () => setLang(root.dataset.lang === 'de' ? 'en' : 'de'));
