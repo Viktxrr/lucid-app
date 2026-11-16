@@ -211,6 +211,14 @@
             </div>
             <a class="badge" id="report" href="report.html"><span lang="de">Fehler melden</span><span lang="en">Report a Bug</span></a>
           </div>
+
+          <div class="contact">
+            <div>
+              <h3><span lang="de">Eine Idee für Lucid?</span><span lang="en">An idea for Lucid?</span></h3>
+              <p><span lang="de">Erzähl uns, was Lucid noch können soll.</span><span lang="en">Tell us what Lucid should do next.</span></p>
+            </div>
+            <a class="badge" id="idea" href="feedback.html"><span lang="de">Idee vorschlagen</span><span lang="en">Suggest an Idea</span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -307,7 +315,7 @@
   // Language: ?lang=en / ?lang=de, else the browser language.
   const root = document.documentElement;
   const btn = document.getElementById('lang');
-  const setLang = (lang) => { root.dataset.lang = lang; root.lang = lang; btn.textContent = lang === 'de' ? 'EN' : 'DE'; document.getElementById('report').href = 'report.html?lang=' + lang; };
+  const setLang = (lang) => { root.dataset.lang = lang; root.lang = lang; btn.textContent = lang === 'de' ? 'EN' : 'DE'; document.getElementById('report').href = 'report.html?lang=' + lang; document.getElementById('idea').href = 'feedback.html?lang=' + lang; };
   const param = new URLSearchParams(location.search).get('lang');
   setLang(param === 'en' || param === 'de' ? param : navigator.language.startsWith('de') ? 'de' : 'en');
   btn.addEventListener('click', () => setLang(root.dataset.lang === 'de' ? 'en' : 'de'));
